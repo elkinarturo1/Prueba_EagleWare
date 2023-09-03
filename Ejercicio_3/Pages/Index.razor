@@ -1,0 +1,83 @@
+﻿@page "/"
+
+<div>
+    <label>Input Replicator</label>
+
+    <br />
+
+    <input @onkeydown="@replicar" />
+
+    @if (textReplicade.Length == 0)
+    {
+        <p style="color:red">You need to typed something.</p>
+    }
+    else
+    {
+        <p style="color:green">You have typed something.</p>
+    }
+
+</div>
+
+
+<div>
+
+    <label>Your Typed:</label>
+
+    <p>@textReplicade</p>
+
+    <label>Facts:</label>
+
+    <p>The message is @numChars characters long</p>
+    <p>@numConsonants out of @numChars are consonants, (@percent % of the total).</p>
+    
+@*    <p>@numVocals</p>  
+    <p>@percent</p>*@
+
+</div>
+
+@code{
+
+    public string textReplicade = "";
+    public int numChars = 0;
+    public int numVocals = 0;
+    public int numConsonants = 0;
+    public float percent = 0;
+
+    public async Task replicar(KeyboardEventArgs e)
+    {
+
+        var key = e.Code;
+        string strLetter = key.ToString().Replace("Key", "");
+
+        if ((strLetter.ToLower() == "a") ||
+                (strLetter.ToLower() == "e") ||
+                (strLetter.ToLower() == "i") ||
+                (strLetter.ToLower() == "o") ||
+                (strLetter.ToLower() == "u"))
+        {
+            numVocals += 1;
+        }
+        else
+        {
+            numConsonants += 1;
+        }
+
+
+        textReplicade += strLetter;
+
+        numChars = textReplicade.Length;
+
+
+        try
+        {
+            percent = (numConsonants * 100) / numChars;
+        }
+        catch (Exception ex)
+        {
+            var resulta = ex.Message;
+        }
+
+        StateHasChanged();
+    }
+
+}

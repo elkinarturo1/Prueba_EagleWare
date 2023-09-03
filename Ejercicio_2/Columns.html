@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<style>
+body {
+  background-color: lightgreen;
+}
+
+@media only screen and (min-width: 901px) {
+  body {
+    background-color: yellow;
+  }
+  
+  .pantallaGrande {
+  width: 16%;
+  margin: 1px;
+  float:left;
+  background-color:gray;
+  height:50px;
+  }
+  
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background-color: blue;
+  }
+  
+  .pantallaMediana {
+  width: 24.7%;
+  margin: 1px;
+  float:left;
+  background-color:gray;
+  height:50px;
+  }  
+  
+  .pantallaMediana56 {
+  width: 49.7%;
+  margin: 1px;
+  float:left;
+  background-color:gray;
+  height:50px;
+  }  
+  
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+  
+  .pantallaPeque {
+  width: 100%;
+  margin: 1px;
+  float:left;
+  background-color:gray;
+  height:50px;
+  }  
+}
+
+</style>
+</head>
+<body>
+
+<div class="pantallaGrande pantallaMediana pantallaPeque">1</div>
+<div class="pantallaGrande pantallaMediana pantallaPeque">2</div>
+<div class="pantallaGrande pantallaMediana pantallaPeque">3</div>
+<div class="pantallaGrande pantallaMediana pantallaPeque">4</div>
+<div class="pantallaGrande pantallaMediana56 pantallaPeque">5</div>
+<div class="pantallaGrande pantallaMediana56 pantallaPeque">6</div>
+
+</body>
+</html>

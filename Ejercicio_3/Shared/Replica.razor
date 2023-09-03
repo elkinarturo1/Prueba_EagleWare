@@ -1,0 +1,15 @@
+﻿<h3>Replica</h3>
+
+@text2
+
+@code {
+
+    [Parameter] public string text1 { get; set; }
+    public string text2 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        text2 = text1;
+    }
+
+}
